@@ -21,6 +21,9 @@ public class App {
         serv.addBook(bk);
 
         Book myBk = serv.getBook("My First Book", new Author("Apple", "Bee"));
-        myBk = serv.getBook("My First Book", new Author("Apple", "Bee"));
+        System.out.println("myBk = " + myBk);
+        Book myBk2 = serv.getBook("My First Book", new Author("Apple", "Bee"));
+        System.out.println("myBk2 = " + myBk2);
+
     }
 }
