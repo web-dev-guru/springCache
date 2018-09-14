@@ -31,10 +31,10 @@ public class LibraryService {
     }
 
 
-//    @Scheduled(fixedDelay=2000)
+    @Scheduled(fixedDelay=5000)
     @CacheEvict(value = "books", allEntries = true)
     public void clearCacheRegularly() {
-        System.out.println("Will be called every 2 seconds");
+        System.out.println("Will be called every 5 seconds");
     }
 
 //    @Scheduled(cron="0 0 6 * * *") /* 6am every day */
