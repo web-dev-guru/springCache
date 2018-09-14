@@ -27,9 +27,28 @@ public class JUnitLibraryTest {
         Book bk = new Book("My First Book", new Author("Apple", "Bee"), 1);
         serv.addBook(bk);
 
+        // will be loaded from getBook method
         Book myBk = serv.getBook("My First Book", new Author("Apple", "Bee"));
+        System.out.println("myBk = " + myBk);
         assertEquals(bk, myBk);
+
+        // will be loaded from cache
+        Book myBk2 = serv.getBook("My First Book", new Author("Apple", "Bee"));
+        System.out.println("myBk2 = " + myBk2);
+        assertEquals(bk, myBk2);
+
+        // Clean cache
+        serv.clearCacheRegularly();
+
+        // will be loaded from getBook method
         myBk = serv.getBook("My First Book", new Author("Apple", "Bee"));
+        System.out.println("after cleaning myBk = " + myBk);
         assertEquals(bk, myBk);
+
+        // will be loaded from cache
+        myBk2 = serv.getBook("My First Book", new Author("Apple", "Bee"));
+        System.out.println("after cleaning myBk2 = " + myBk2);
+        assertEquals(bk, myBk2);
+
     }
 }
