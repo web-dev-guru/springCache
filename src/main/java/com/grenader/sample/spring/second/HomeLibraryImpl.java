@@ -12,6 +12,8 @@ public class HomeLibraryImpl implements Library {
     Map<Long, Book> shelves2 = new HashMap<Long, Book>();
 
     public Book getBook(String title, Author author) {
+
+        System.out.println("we are int he library getBook method");
         return shelves.get(title + author.toString());
     }
 

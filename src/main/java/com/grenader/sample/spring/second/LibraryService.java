@@ -21,7 +21,7 @@ public class LibraryService {
 
     @Cacheable(value = "books", key = "#title + #author")
     public Book getBook(String title, Author author) {
-        System.out.println("!!! We are in the getBook(...) method");
+        System.out.println("!!! We are in the service getBook(...) method");
         Book book = library.getBook(title, author);
         if (book != null)
             System.out.println("Book Found! " + book.toString());
